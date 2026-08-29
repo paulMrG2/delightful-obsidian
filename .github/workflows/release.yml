@@ -30,10 +30,14 @@ jobs:
           pnpm install
           pnpm run build
 
+      - name: Package plugin
+        run: zip delightful-obsidian.zip main.js manifest.json styles.css
+
       - name: Generate artifact attestation
         uses: actions/attest@v4
         with:
           subject-path: |
+            delightful-obsidian.zip
             main.js
             manifest.json
             styles.css
@@ -47,4 +51,4 @@ jobs:
           gh release create "$tag" \
             --title="$tag" \
             --draft \
-            main.js manifest.json styles.css
+            delightful-obsidian.zip main.js manifest.json styles.css
