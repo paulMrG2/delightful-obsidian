@@ -1,6 +1,6 @@
 {
-	"id": "delightful-obsidian",
-	"name": "Delightful for Obsidian",
+	"id": "delightful",
+	"name": "Delightful",
 	"version": "1.0.0",
 	"minAppVersion": "1.13.0",
 	"description": "Brighten your day with delights when you complete a task (check a checkbox).",
