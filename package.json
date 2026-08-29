@@ -1,6 +1,6 @@
 {
 	"name": "delightful",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Brighten your day with delights when you complete a task (check a checkbox).",
 	"main": "main.js",
 	"type": "module",

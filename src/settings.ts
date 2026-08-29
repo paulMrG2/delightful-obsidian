@@ -127,7 +127,7 @@ export class DelightfulSettingTab extends PluginSettingTab {
             name: 'Support me',
             render: (setting) => {
               setting.nameEl.setText('Support');
-              const frag = document.createDocumentFragment();
+              const frag = createFragment();
               const links: { label: string; href: string }[] = [
                 {label: 'Sponsor on GitHub', href: 'https://github.com/sponsors/paulMrG2'},
                 {label: 'This plugin is also available as a browser extension for GitHub, Todoist, Asana, Trello, Wrike, Jira, ClickUp, Monday.com, and Productive. Click to see it on the Chrome web store.', href: 'https://chromewebstore.google.com/detail/delightful/lcpnconeejbcokkmdmlkhenjnkdcioji'}
