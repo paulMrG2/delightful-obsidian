@@ -1,0 +1,17 @@
+# os
+.DS_Store
+
+# ide
+.idea
+.vscode
+
+# code style
+.editorconfig
+
+# modules
+node_modules/
+
+# generated
+main.js
+*.map
+data.json

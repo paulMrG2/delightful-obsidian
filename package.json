@@ -1,0 +1,25 @@
+{
+	"name": "delightful-obsidian",
+	"version": "1.0.0",
+	"description": "Brighten your day with delights when you complete a task (check a checkbox).",
+	"main": "main.js",
+	"type": "module",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"version": "node version-bump.mjs && git add manifest.json versions.json"
+	},
+	"keywords": [],
+	"author": "Paul Groth",
+	"license": "0-BSD",
+	"dependencies": {
+		"canvas-confetti": "1.9.4"
+	},
+	"devDependencies": {
+		"@types/canvas-confetti": "1.9.0",
+		"@types/node": "26.4.0",
+		"esbuild": "0.28.2",
+		"obsidian": "latest",
+		"typescript": "7.0.2"
+	}
+}
