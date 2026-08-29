@@ -82,8 +82,6 @@ export class DelightfulSettingTab extends PluginSettingTab {
       chanceOptions[String(c.value)] = c.name;
     }
 
-    const version = this.plugin.manifest.version;
-
     return [
       // Header
       {
@@ -135,13 +133,12 @@ export class DelightfulSettingTab extends PluginSettingTab {
                 {label: 'This plugin is also available as a browser extension for GitHub, Todoist, Asana, Trello, Wrike, Jira, ClickUp, Monday.com, and Productive. Click to see it on the Chrome web store.', href: 'https://chromewebstore.google.com/detail/delightful/lcpnconeejbcokkmdmlkhenjnkdcioji'}
               ];
               links.forEach(({label, href}, i) => {
-                if (i > 0) frag.append(document.createElement('br'), document.createElement('br'));
-                const a = document.createElement('a');
-                a.href = href;
-                a.textContent = label;
-                a.target = '_blank';
-                a.rel = 'noopener';
-                frag.append(a);
+                if (i > 0) frag.append(createEl('br'), createEl('br'));
+                frag.append(createEl('a', {
+                  text: label,
+                  href,
+                  attr: { target: '_blank', rel: 'noopener' }
+                }));
               });
               setting.descEl.append(frag);
             }

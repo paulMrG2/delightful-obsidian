@@ -1,1 +1,131 @@
-/* Delightful plugin - no additional styles required */
+/* Delightful plugin */
+
+.delightContainer {
+	align-items: var(--delight-align-items, center);
+	bottom: var(--delight-bottom, 0);
+	display: flex;
+	height: 100%;
+	justify-content: var(--delight-justify-content, center);
+	pointer-events: none;
+	position: fixed;
+	width: 100%;
+	z-index: 100000000;
+}
+
+.delightAllOfTheThings {
+	height: 100vh;
+	width: 100vw;
+}
+
+.delightBadger {
+	position: fixed;
+	width: var(--delight-badger-width, 300px);
+}
+
+.delightBadger0 { left: 20%; top: 50%; z-index: 5; }
+.delightBadger1 { left: 70%; top: 45%; z-index: 4; }
+.delightBadger2 { left: 40%; top: 30%; z-index: 3; }
+.delightBadger3 { left: 30%; top: 20%; z-index: 2; }
+.delightBadger4 { left: 60%; top: 15%; z-index: 1; }
+.delightBadger5 { left: 20%; top: 10%; z-index: 0; }
+
+.delightCanvas {
+	width: 100%;
+	height: 100%;
+}
+
+.delightGrogu {
+	height: 500px;
+	position: fixed;
+	bottom: 0;
+	transform: translateY(500px);
+	transition: transform 350ms ease;
+}
+
+.delightGroguMove {
+	transform: translateY(-20px);
+	transition: transform 550ms ease;
+}
+
+.delightGroguShakeIt {
+	animation: delightGroguShakeScreenWithTheForce 0.5s infinite;
+}
+
+@keyframes delightGroguShakeScreenWithTheForce {
+	0%   { transform: translate(8px, 8px) rotate(0deg); }
+	10%  { transform: translate(-8px, -4px) rotate(-2deg); }
+	20%  { transform: translate(-6px, 0px) rotate(2deg); }
+	30%  { transform: translate(6px, 4px) rotate(0deg); }
+	40%  { transform: translate(8px, -8px) rotate(2deg); }
+	50%  { transform: translate(-8px, 4px) rotate(-2deg); }
+	60%  { transform: translate(-6px, 8px) rotate(0deg); }
+	70%  { transform: translate(6px, 8px) rotate(-2deg); }
+	80%  { transform: translate(-8px, -8px) rotate(2deg); }
+	90%  { transform: translate(8px, 4px) rotate(0deg); }
+	100% { transform: translate(8px, -4px) rotate(-2deg); }
+}
+
+.delightNyanCat {
+	width: 700px;
+	height: 100%;
+	position: fixed;
+	bottom: 0;
+	transform: translateX(calc(-50vw - 350px));
+}
+
+.delightNyanCatMove {
+	transform: translateX(calc(50vw + 350px));
+	transition: transform var(--delight-transition-duration, 1700ms) cubic-bezier(0.2, 0.8, 0.8, 0.2);
+}
+
+.delightParrot {
+	width: 400px;
+	max-height: 100vh;
+	position: fixed;
+	bottom: 0;
+	transform: translateX(calc(-50vw - 200px));
+}
+
+.delightParrotMove {
+	transform: translateX(calc(50vw + 200px));
+	transition: transform var(--delight-transition-duration, 1700ms) cubic-bezier(0.2, 0.8, 0.8, 0.2);
+}
+
+.delightSmugThugPewPew {
+	width: min(80%, 800px);
+}
+
+.delightSuccessKid {
+	height: 100vh;
+	width: 100vw;
+}
+
+.delightVaultBoy {
+	height: 500px;
+	position: fixed;
+	bottom: 0;
+	transform: translateX(600px);
+	transition: transform 350ms ease;
+}
+
+.delightVaultBoyMove {
+	transform: translateX(0);
+	transition: transform 550ms ease;
+}
+
+.delightful-settings-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1em 0;
+}
+
+.delightful-settings-logo {
+	width: 260px;
+}
+
+.delightful-settings-tagline {
+	color: var(--text-muted);
+	font-style: italic;
+	text-align: center;
+}

@@ -71,7 +71,7 @@ export const doAnimation = (settings: DelightfulSettings, event: MouseEvent): vo
       break;
   }
 
-  setTimeout(() => {
+  window.setTimeout(() => {
     animationRunning = false;
   }, DURATION);
 };

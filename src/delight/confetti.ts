@@ -4,9 +4,7 @@ import { delightContainer } from './container';
 export const getConfetti = (duration: number): void => {
 	const end = Date.now() + 400;
 
-	let confettiCanvas: HTMLCanvasElement | null = document.createElement('canvas');
-	confettiCanvas.style.width = '100%';
-	confettiCanvas.style.height = '100%';
+	let confettiCanvas: HTMLCanvasElement | null = createEl('canvas', { cls: 'delightCanvas' });
 
 	let container: HTMLDivElement | null = delightContainer({});
 	container.append(confettiCanvas);
@@ -17,7 +15,7 @@ export const getConfetti = (duration: number): void => {
 		useWorker: false,
 	});
 
-	myConfetti({
+	void myConfetti({
 		origin: { x: 0.5, y: 0.6 },
 		particleCount: 100,
 		spread: 180,
@@ -27,20 +25,20 @@ export const getConfetti = (duration: number): void => {
 	const randomInRange = (min: number, max: number) =>
 		Math.random() * (max - min) + min;
 
-	const randomConfetti = setInterval(() => {
+	const randomConfetti = window.setInterval(() => {
 		const timeLeft = end - Date.now();
 		if (timeLeft <= 0) {
-			clearInterval(randomConfetti);
+			window.clearInterval(randomConfetti);
 			return;
 		}
-		myConfetti({
+		void myConfetti({
 			angle: 60,
 			origin: { x: randomInRange(0.1, 0.9), y: Math.random() },
 			particleCount: 80,
 			spread: 55,
 			ticks: 90,
 		});
-		myConfetti({
+		void myConfetti({
 			angle: 120,
 			origin: { x: randomInRange(0.1, 0.9), y: Math.random() },
 			particleCount: 80,
@@ -49,8 +47,8 @@ export const getConfetti = (duration: number): void => {
 		});
 	}, 100);
 
-	setTimeout(() => {
-		myConfetti({
+	window.setTimeout(() => {
+		void myConfetti({
 			origin: { x: 0.5, y: 0.4 },
 			particleCount: 400,
 			spread: 400,
@@ -58,7 +56,7 @@ export const getConfetti = (duration: number): void => {
 		});
 	}, 300);
 
-	setTimeout(() => {
+	window.setTimeout(() => {
 		myConfetti.reset();
 		container?.remove();
 		confettiCanvas = null;
